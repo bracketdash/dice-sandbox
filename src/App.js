@@ -5,6 +5,18 @@ const App = () => {
   const add = (color) => {
     setDice([...dice, { color, value: Math.floor(Math.random() * 6) + 1 }]);
   };
+  const inc = (index) => {
+    setDice((dice) => {
+      const diceCopy = [...dice];
+      diceCopy[index] = { ...dice[index] };
+      if (diceCopy[index].value == 6) {
+        diceCopy[index].value = 1;
+      } else {
+        diceCopy[index].value++;
+      }
+      return diceCopy;
+    });
+  };
   const rem = (index) => {
     setDice((dice) => dice.filter((_, i) => i !== index));
   };
@@ -18,7 +30,11 @@ const App = () => {
       </div>
       <div className="dice-pool">
         {dice.map(({ color, value }, index) => (
-          <div className={`die ${color}`} onClick={() => rem(index)}>{value}</div>
+          <div
+            className={`die ${color}`}
+            onClick={() => inc(index)}
+            onDoubleClick={() => rem(index)}
+          >{value}</div>
         ))}
       </div>
     </div>
