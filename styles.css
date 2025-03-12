@@ -1,0 +1,175 @@
+html,
+body {
+  background-color: #fff;
+  font-family: "Helvetica", "Arial", "Verdana", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #369;
+  padding: 10px 0;
+}
+
+.header > h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+  user-select: none;
+  width: 352px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.add-button,
+.dice > div {
+  border-radius: 6px;
+  border: 2px solid #0003;
+  color: #fff;
+  height: 58px;
+  line-height: 58px;
+  min-height: 58px;
+  min-width: 58px;
+  width: 58px;
+}
+
+.add-button {
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.yellow .add-button,
+.yellow .dice > div {
+  background: #fc0;
+}
+
+.yellow .add-button:hover,
+.yellow .dice > div > div:hover {
+  background: #fd1;
+}
+
+.yellow .add-button:active,
+.yellow .dice > div > div:active {
+  background: #eb0;
+}
+
+.blue .add-button,
+.blue .dice > div {
+  background: #369;
+}
+
+.blue .add-button:hover,
+.blue .dice > div > div:hover {
+  background: #47a;
+}
+
+.blue .add-button:active,
+.blue .dice > div > div:active {
+  background: #258;
+}
+
+.pink .add-button,
+.pink .dice > div {
+  background: #f99;
+}
+
+.pink .add-button:hover,
+.pink .dice > div > div:hover {
+  background: #faa;
+}
+
+.pink .add-button:active,
+.pink .dice > div > div:active {
+  background: #e88;
+}
+
+.black .add-button,
+.black .dice > div {
+  background: #333;
+}
+
+.black .add-button:hover,
+.black .dice > div > div:hover {
+  background: #444;
+}
+
+.black .add-button:active,
+.black .dice > div > div:active {
+  background: #222;
+}
+
+.dice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dice > div {
+  font-size: 32px;
+  position: relative;
+  transition-duration: 300ms;
+  transition-property: all;
+}
+
+.dice > div.removing {
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-right: -10px;
+  min-width: 0;
+  width: 0;
+}
+
+.dice > div.removing > * {
+  opacity: 0;
+}
+
+.dice > div > div {
+  background: inherit;
+  border-radius: 4px;
+  border: 2px solid #0003;
+  cursor: pointer;
+  font-size: 13px;
+  height: 15px;
+  line-height: 15px;
+  position: absolute;
+  right: -5px;
+  width: 15px;
+}
+
+.dice > div > div.hidden {
+  display: none;
+}
+
+.dice > div > div.increase {
+  top: -3px;
+}
+
+.dice > div > div.remove {
+  height: 14px;
+  line-height: 14px;
+  right: -4px;
+  top: 20px;
+  width: 13px;
+}
+
+.dice > div > div.decrease {
+  bottom: -3px;
+}
